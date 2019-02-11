@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for commit in commits %}
+        <ul>
+            <li>{{ commit.commit|safe }}</li>
+        </ul>
+    {% endfor %}
+
+    <form action="{% url 'add_commit' %}" method="post">
+        {% csrf_token %}
+        <textarea name="commit" id="" cols="30" rows="5"></textarea>
+        <div>
+            <input type="submit" value="提交">
+        </div>
+    </form>
+    <img src="" alt="">    
+</body>
+</html>

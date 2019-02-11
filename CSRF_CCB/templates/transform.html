@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <meta charset="UTF-8">
+    <title>建设银行-转账</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+{#    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>#}
+{#    <script src="{% static 'myajax.js' %}"></script>#}
+{#    <script>#}
+{#        $(function () {#}
+{#            $('#box').click(function (event) {#}
+{#                event.preventDefault();#}
+{#                var telephone = $("input[name='telephone]").val();#}
+{#                var money = $("input[name='money']").val();#}
+{##}
+{#                myajax.post({#}
+{#                    'url': '/transform/',#}
+{#                    'data': {#}
+{#                        'telephone': telephone,#}
+{#                        'money': money,#}
+{#                    },#}
+{#                    'success': function (data) {#}
+{#                        console.log(data)#}
+{#                    },#}
+{#                    'fail': function (error) {#}
+{#                        console.log(error)#}
+{#                    }#}
+{#                });#}
+{#            });#}
+{#        });#}
+{#    </script>#}
+{% endblock %}
+
+{% block body %}
+<form action="" method="post" style="width: 30%" id="myform">
+    {% csrf_token %}
+  <div class="form-group">
+    <label>Telephone</label>
+    <input type="text" class="form-control" placeholder="电话号码" name="telephone">
+  </div>
+  <div class="form-group">
+    <label>Count</label>
+    <input type="text" class="form-control" placeholder="转账金额" name="money">
+  </div>
+  <button type="submit" class="btn btn-default" id="box">Submit</button>
+</form>
+{% for message in messages %}
+        <ul>
+            <li style="list-style: none; margin: 20px 0">
+                <span class="label label-danger" style="font-size: 20px">{{ message }}</span>
+            </li>
+        </ul>
+    {% endfor %}
+{% endblock %}

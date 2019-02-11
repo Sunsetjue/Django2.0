@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量</title>
+</head>
+<body>
+    <h2 style="color:pink; text-align:center;">
+        <!--django变量的表示形式-->
+        {{ one.first }}
+        {{ two.0 }}
+        {{ three.1 }}
+
+    </h2>
+    <p style="width:70px; background:#347862; color:#332211; margin:0px 70px;">
+        票价查询
+         <!--django常用模板标签-->
+        {% if age < 10 %}
+        <p>小孩子免费</p>
+        {% elif age < 60 %}
+        <p style="color:blue; text-indent:70px;">成人价</p>
+        {% elif age >= 60 %}
+        <p>老人半价</p>
+        {% else %}
+        <p>我不知道你在说什么</p>
+        {% endif %}
+    </p>
+
+    <ul>
+        {% for k,v in one.items %}
+            <li>{{ k }} 对应的值是 {{ v }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

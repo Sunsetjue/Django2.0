@@ -1,0 +1,26 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+.box1{
+    overflow:hidden;
+    background: #3a3a3a;
+    height:65px;
+}
+
+.box1 li{
+    float: left;
+    list-style:none;
+    line-height:65px;
+    margin:0px 25px;
+}
+
+.box1 li a{
+    color:white;
+    text-decoration:none;
+}
+
+.box1 li a:hover{
+    color:yellow;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>with标签</title>
+    <style>
+        .box1{
+            overflow:hidden;
+        }
+        .box1 li{
+            float:left;
+            list-style:none;
+            margin:30px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="box1">
+        <li><a href="/index_index/">首页</a></li>
+        <li><a href="{% url 'book' %}">图书</a></li>
+        <li><a href="{% url 'movie' %}">电影</a></li>
+        <li><a href="{% url 'city' %}">同城</a></li>
+        <li><a href="{% url 'detail' book_name='从入门到放弃' %}">最火的书</a></li>
+        <li><a href="{% url 'login' %}?next=123456">登陆</a></li>
+        <!--首推使用url标签  通过来给URL命名来获取-->
+    </ul>
+</body>
+</html>

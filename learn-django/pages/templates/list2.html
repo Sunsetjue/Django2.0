@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+<ul>
+    {% for article in articles %}
+    <li>
+        {{article.title}}
+        {{article.content}}
+    </li>
+    {% endfor %}
+</ul>
+<ul class="pagination">
+    {% if page_obj.has_previous %}
+        <li><a href="{% url 'front:list' %}?p={{page_obj.previous_page_number}}">上一页</a></li>
+    {% else %}
+        <li class="disabled"><a href="">上一页</a></li>
+    {% endif %}
+    {% if left_omit %}
+        <li><a href="{% url 'front:list' %}?p={{1}}">1</a></li>
+        <li class="disabled"><a href="">...</a></li>
+    {% endif %}
+    {% for left_range in left_ranges %}
+        {% if left_range == present %}
+            <li class="active"><a href="{% url 'front:list' %}?p={{preset}}">{{present}}</a></li>
+        {% else %}
+            <li><a href="{% url 'front:list' %}?p={{left_range}}">{{left_range}}</a></li>
+        {% endif %}
+    {% endfor %}
+    {% for right_range in right_ranges %}
+        <li><a href="{% url 'front:list' %}?p={{right_range}}">{{right_range}}</a></li>
+    {% endfor %}
+    {% if right_omit %}
+        <li class="disabled"><a href="">...</a></li>
+        <li><a href="{% url 'front:list' %}?p={{end}}">{{end}}</a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+        <li><a href="{% url 'front:list' %}?p={{page_obj.next_page_number}}">下一页</a></li>
+    {% else %}
+        <li class="disabled"><a href="">下一页</a></li>
+    {% endif %}
+
+</ul>
+
+</body>
+</html>

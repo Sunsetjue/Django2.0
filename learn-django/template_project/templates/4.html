@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板常用过滤器</title>
+</head>
+<body>
+    <!--使用 add 的模板过滤器-->
+    <p>{{  value1 |add:value2  }}</p>
+    <!--使用 cut 的模板过滤器-->
+    {{  "hello world" |cut:" "  }}
+    <!--使用 date 的模板过滤器-->
+    <p>{{ today |date:"Y/m/d/G:i:s" }}</p>
+    <!--使用 floatformat 的四舍五入的模板过滤器-->
+    <p>{{ value3 |floatformat:2 }}</p>
+    <!--join 和python一样的效果-->
+    <p>{{  value4 |join:"/"  }}</p>
+    <!--random 随机选择列表或元组内的一个值-->
+    <p>{{  value4 |random  }}</p>
+    <!--striptags 删除值里所有的html标签-->
+    <p>{{  value5 |striptags   }}</p>
+    <!--truncatechars 切割指定长度的字符串-->
+    <p>{{  value6 |truncatechars:7  }}</p>
+    <p>{{  value7 |truncatechars_html:7  }}</p>
+</body>
+</html>

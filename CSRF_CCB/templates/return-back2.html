@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<button type="button" class="btn btn-warning">您的余额不足！</button>> <br>
+    <a href="{% url 'front:index' %}"><button type="button" class="btn btn-link">返回首页</button></a>
+{% endblock %}

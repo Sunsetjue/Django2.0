@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% if extra_money %}
+    <h2 style="color: lawngreen">您的余额为:{{ extra_money }}</h2>
+    {% endif %}
+{% endblock %}
